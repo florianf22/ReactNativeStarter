@@ -1,11 +1,27 @@
+import {DrawerScreenProps} from '@react-navigation/drawer';
+import {CompositeScreenProps} from '@react-navigation/native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, Button} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
+import Spacer from '../components/Spacer';
+import {DrawerParamList, RootStackParamList} from '../navigation';
+
+type IconsScreenNavigationProp = CompositeScreenProps<
+  DrawerScreenProps<DrawerParamList, 'Icons'>,
+  NativeStackScreenProps<RootStackParamList>
+>;
 
 interface IconsScreenProps {}
 
-const IconsScreen: React.FC<IconsScreenProps> = () => {
+const IconsScreen: React.FC<IconsScreenProps & IconsScreenNavigationProp> = ({
+  navigation,
+}) => {
+  const navigateToFirstScreen = () => {
+    navigation.navigate('First');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.infoWrapper}>
@@ -29,6 +45,9 @@ const IconsScreen: React.FC<IconsScreenProps> = () => {
           color="#b01a77"
         />
       </View>
+
+      <Spacer type="big" />
+      <Button title="Go to First Screen" onPress={navigateToFirstScreen} />
     </View>
   );
 };

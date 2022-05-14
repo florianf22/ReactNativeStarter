@@ -5,6 +5,8 @@ import SecondScreen from '../screens/SecondScreen';
 import ReAnimatedExampleScreen from '../screens/ReAnimatedExampleScreen';
 import GestureHandlerScreen from '../screens/GestureHandlerScreen';
 import IconsScreen from '../screens/IconsScreen';
+import TabNavigator from './Tab';
+import DrawerNavigator from './Drawer';
 
 export type RootStackParamList = {
   First: undefined;
@@ -12,6 +14,8 @@ export type RootStackParamList = {
   ReAnimatedExample: undefined;
   GestureHandler: undefined;
   Icons: undefined;
+  Tab: undefined;
+  Drawer: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -27,6 +31,14 @@ const RootStackNavigator = () => {
       />
       <Stack.Screen name="GestureHandler" component={GestureHandlerScreen} />
       <Stack.Screen name="Icons" component={IconsScreen} />
+      <Stack.Screen name="Tab" component={TabNavigator} />
+      <Stack.Screen
+        name="Drawer"
+        component={DrawerNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };

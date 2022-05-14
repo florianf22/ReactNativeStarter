@@ -34,6 +34,14 @@ const FirstScreen: React.FC<FirstScreenProps & FirstScreenNavigationProps> = ({
     navigation.navigate('Icons');
   };
 
+  const navigateToTabScreen = () => {
+    navigation.navigate('Tab');
+  };
+
+  const navigateToDrawerScreen = () => {
+    navigation.navigate('Drawer');
+  };
+
   return (
     <View style={styles.container}>
       <Text>Landing Page</Text>
@@ -51,6 +59,10 @@ const FirstScreen: React.FC<FirstScreenProps & FirstScreenNavigationProps> = ({
       />
       {isAndroid && <Spacer type="small" />}
       <Button title="Go to Icons Screen" onPress={navigateToIconsScreen} />
+      {isAndroid && <Spacer type="small" />}
+      <Button title="Go to Tab Screen" onPress={navigateToTabScreen} />
+      {isAndroid && <Spacer type="small" />}
+      <Button title="Go to Drawer Screen" onPress={navigateToDrawerScreen} />
     </View>
   );
 };
