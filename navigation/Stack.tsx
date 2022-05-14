@@ -7,6 +7,7 @@ import GestureHandlerScreen from '../screens/GestureHandlerScreen';
 import IconsScreen from '../screens/IconsScreen';
 import TabNavigator from './Tab';
 import DrawerNavigator from './Drawer';
+import FastImageScreen from '../screens/FastImageScreen';
 
 export type RootStackParamList = {
   First: undefined;
@@ -16,6 +17,7 @@ export type RootStackParamList = {
   Icons: undefined;
   Tab: undefined;
   Drawer: undefined;
+  FastImage: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -39,6 +41,7 @@ const RootStackNavigator = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen name="FastImage" component={FastImageScreen} />
     </Stack.Navigator>
   );
 };
