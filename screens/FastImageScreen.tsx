@@ -1,7 +1,9 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import {IMAGES} from '../constants/images';
+
+const IMAGES_HEIGHT = 300;
+const IMAGES_WIDTH = 300;
 
 interface FastImageScreenProps {}
 
@@ -43,8 +45,8 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   fastImage: {
-    width: IMAGES.fastImage.width,
-    height: IMAGES.fastImage.height,
+    width: IMAGES_WIDTH,
+    height: IMAGES_HEIGHT,
   },
 });
 

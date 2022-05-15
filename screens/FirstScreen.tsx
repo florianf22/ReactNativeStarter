@@ -46,6 +46,10 @@ const FirstScreen: React.FC<FirstScreenProps & FirstScreenNavigationProps> = ({
     navigation.navigate('FastImage');
   };
 
+  const navigateToFormikScreen = () => {
+    navigation.navigate('Formik');
+  };
+
   return (
     <View style={styles.container}>
       <Text>Landing Page</Text>
@@ -72,6 +76,8 @@ const FirstScreen: React.FC<FirstScreenProps & FirstScreenNavigationProps> = ({
         title="Go to FastImage Screen"
         onPress={navigateToFastImageScreen}
       />
+      {isAndroid && <Spacer type="small" />}
+      <Button title="Go to Formik Screen" onPress={navigateToFormikScreen} />
     </View>
   );
 };

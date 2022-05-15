@@ -8,6 +8,7 @@ import IconsScreen from '../screens/IconsScreen';
 import TabNavigator from './Tab';
 import DrawerNavigator from './Drawer';
 import FastImageScreen from '../screens/FastImageScreen';
+import FormikScreen from '../screens/FormikScreen';
 
 export type RootStackParamList = {
   First: undefined;
@@ -18,6 +19,7 @@ export type RootStackParamList = {
   Tab: undefined;
   Drawer: undefined;
   FastImage: undefined;
+  Formik: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -42,6 +44,7 @@ const RootStackNavigator = () => {
         }}
       />
       <Stack.Screen name="FastImage" component={FastImageScreen} />
+      <Stack.Screen name="Formik" component={FormikScreen} />
     </Stack.Navigator>
   );
 };
